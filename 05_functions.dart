@@ -18,7 +18,8 @@ String greetEveryone() => 'Hello everyone!';
 int addTwoNumbers( int a, int b ) => a + b;
 
 //funcion que retorna un Int y espera argumentos pero 
-//'b' no es obligatorio y en caso de no existir es 0
+//'b' no es obligatorio y en caso de no existir es 0, dentro 
+// de [ var, var] van las variables que son no obligatorias
 int addTwoNumbersOptional( int a, [ int b = 0 ]) {
 //Formas de validar si existe un valor
 //   b ??= 0;
@@ -27,9 +28,10 @@ int addTwoNumbersOptional( int a, [ int b = 0 ]) {
   return a + b;
 }
 
-
+//con {} defino que los parametros son opcionales al poner 
+// el requiered se poner por parametro, en este caso name es requerido si o si
 String greetPerson({ required String name, String message = 'Hola,' }) {
-  return '$message Fernando';
+  return '$message $name';
 }
 
 
