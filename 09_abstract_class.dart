@@ -2,6 +2,9 @@ void main() {
 
   //llamo valores final con la class con el valor que se solicita. Segun la clase
   final windPlant = WindPlant( initialEnergy: 100 );
+
+  // Guarado el resultado de mi clas en una variable finla 
+  //Envio el parametro obligatorio  "energyLeft" de mi class "NuclearPlant"
   final nuclearPlant = NuclearPlant( energyLeft: 1000 );
   
   
@@ -37,7 +40,7 @@ abstract class EnergyPlant {
 // FIN CLASS ABSTRACT
 
 
-// extends o implements
+// Extends
 // EXTENDS, Extender o heredar de otra class en este caso del padre EnergyPlant.
 // Creamos la clase y adicionamos ' extends ' y extiende de EnergyPlant
 class WindPlant extends EnergyPlant {
@@ -60,17 +63,20 @@ class WindPlant extends EnergyPlant {
   }
 }
 
-
+// Implements
 class NuclearPlant implements EnergyPlant {
   
+  //Declaro mis parametros
   @override
   double energyLeft;
-  
+  //Declaro mis parametros y difino que es de la interface PlantType
   @override
   final PlantType type = PlantType.nuclear;
   
+  //Inicializo el valor de mi variable como requerida para este caso
   NuclearPlant({ required this.energyLeft });
   
+  //Funcion que se ejecuta como parte de la class extendida del padre EnergyPlant
   @override
   void consumeEnergy( double amount ) {
     energyLeft -= (amount * 0.5);
@@ -79,7 +85,7 @@ class NuclearPlant implements EnergyPlant {
 
 
 
-// funcion que recibe una EnergyPlant
+// Funcion que recibe una class extendida de EnergyPlant
 double chargePhone( EnergyPlant plant ) {
   // si la planta su energia es menor a 10 muestro un mensaje de error 
   if ( plant.energyLeft < 10 ) {
