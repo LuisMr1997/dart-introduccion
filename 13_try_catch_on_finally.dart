@@ -8,9 +8,12 @@ void main() async {
     print( 'éxito: $value' );
     
   } on Exception catch(err) {
+    // ON nos permite reaccionar en base al error 
+    // Para el caso es una Exception es decir hacer algo en base a la exception 
     print('Tenemos una Exception: $err');
     
   } catch (err) {
+    //Errores inesperado
     print('OOP!! algo terrible pasó: $err');
     
   } finally {
